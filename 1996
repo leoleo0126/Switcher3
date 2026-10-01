@@ -1,0 +1,3 @@
+@ECHO OFF
+IF "%OS%"=="Windows_NT" SETLOCAL
+gradle %*

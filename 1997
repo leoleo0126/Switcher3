@@ -1,0 +1,16 @@
+# 스위쳐 5차
+
+Android용 스위쳐 프로젝트입니다.
+
+## GitHub에서 APK 만들기
+
+1. 이 폴더 안의 파일과 폴더를 GitHub 저장소의 **루트**에 업로드합니다.
+2. GitHub 저장소에서 **Actions** 탭을 엽니다.
+3. **Build Switcher APK** 워크플로를 선택합니다.
+4. `Run workflow`를 누릅니다.
+5. 빌드가 성공하면 실행 결과의 **Artifacts → Switcher5-APK**에서 APK를 다운로드합니다.
+
+또는 `main` 브랜치에 변경사항을 push하면 자동으로 빌드됩니다.
+
+### 중요
+`Switcher5`라는 상위 폴더를 GitHub에 통째로 올리지 말고, **이 폴더 안의 `.github`, `app`, `gradle` 및 각 파일이 저장소 최상위에 보이도록** 올립니다.

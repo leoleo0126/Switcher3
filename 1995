@@ -1,0 +1,22 @@
+#!/bin/sh
+
+APP_HOME=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
+cd "$APP_HOME"
+
+if command -v gradle >/dev/null 2>&1; then
+    exec gradle "$@"
+fi
+
+# Fallback for AndroidIDE installations that expose Gradle in common locations.
+for G in \
+    "$HOME/.gradle/gradle" \
+    "$PREFIX/bin/gradle" \
+    "/data/data/com.itsaky.androidide/files/usr/bin/gradle" \
+    "/data/data/com.itsaky.androidide/files/usr/local/bin/gradle"; do
+    if [ -x "$G" ]; then
+        exec "$G" "$@"
+    fi
+done
+
+echo "Gradle executable was not found. In AndroidIDE, install/enable the build tools, then run this command again." >&2
+exit 127
